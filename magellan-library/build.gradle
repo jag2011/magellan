@@ -4,14 +4,14 @@ group = GROUP
 version = VERSION_NAME
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.1"
+  compileSdkVersion 26
+
 
   resourcePrefix 'magellan_'
 
   defaultConfig {
-    minSdkVersion 15
-    targetSdkVersion 25
+    minSdkVersion 19
+    targetSdkVersion 26
     versionCode 1
     versionName "1.0"
 
@@ -25,7 +25,7 @@ android {
   }
 }
 
-apply from: rootProject.file('checkstyle/checkstyle.gradle')
+//apply from: rootProject.file('checkstyle/checkstyle.gradle')
 
 dependencies {
 
@@ -42,4 +42,3 @@ dependencies {
 
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
