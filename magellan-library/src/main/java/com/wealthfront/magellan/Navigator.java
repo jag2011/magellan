@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.wealthfront.magellan.transitions.DefaultTransition;
@@ -139,6 +140,10 @@ public class Navigator implements BackHandler {
     updateMenu();
   }
 
+  public boolean onOptionsItemSelected(MenuItem item) {
+    return currentScreen().onOptionsItemSelected(item);
+  }
+
   /**
    * Notifies Navigator that the activity's onResume lifecycle callback has been hit. Call this method from
    * {@code onResume} of the Activity associated with this Navigator.
@@ -153,6 +158,8 @@ public class Navigator implements BackHandler {
       currentScreen().onResume(activity);
     }
   }
+
+
 
   /**
    * Notifies Navigator that the activity's onPause lifecycle callback has been hit. Call this method from

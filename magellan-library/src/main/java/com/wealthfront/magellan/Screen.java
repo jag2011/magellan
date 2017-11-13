@@ -10,6 +10,7 @@ import android.support.annotation.StringRes;
 import android.support.annotation.VisibleForTesting;
 import android.util.SparseArray;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 
 import static com.wealthfront.magellan.Preconditions.checkState;
@@ -167,6 +168,10 @@ public abstract class Screen<V extends ViewGroup & ScreenView> implements BackHa
    * Override this method to dynamically change the menu.
    */
   protected void onUpdateMenu(Menu menu) {}
+
+  protected boolean onOptionsItemSelected(MenuItem item) {
+    return false;
+  }
 
   /**
    * Called when the Activity is resumed and when the Screen is shown.
