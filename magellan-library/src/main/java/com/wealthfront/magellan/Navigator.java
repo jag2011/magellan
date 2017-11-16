@@ -34,7 +34,8 @@ import static com.wealthfront.magellan.Preconditions.checkState;
  */
 public class Navigator implements BackHandler {
 
-  private final Deque<Screen> backStack = new ArrayDeque<>();
+  public final Deque<Screen> backStack = new ArrayDeque<>();
+
   private Activity activity;
   private Menu menu;
   private ScreenContainer container;
