@@ -38,6 +38,8 @@ import static com.wealthfront.magellan.Preconditions.checkState;
 public abstract class Screen<V extends ViewGroup & ScreenView> implements BackHandler {
 
   public static final int DEFAULT_ACTION_BAR_COLOR_RES = 0;
+  public static final int NO_ACTION_MENU = -1;
+
   private static final String VIEW_STATE = "com.wealthfront.navigation.Screen.viewState";
 
   private Activity activity;
@@ -172,6 +174,13 @@ public abstract class Screen<V extends ViewGroup & ScreenView> implements BackHa
   protected boolean onOptionsItemSelected(MenuItem item) {
     return false;
   }
+
+  public int getActionMenuResId() { return NO_ACTION_MENU; }
+
+  public boolean onActionMenuItemSelected(MenuItem item) {
+    return false;
+  }
+
 
   /**
    * Called when the Activity is resumed and when the Screen is shown.
